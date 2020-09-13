@@ -160,6 +160,10 @@ nav.navbar{
   .navigation--bar--menu {
     justify-content: space-between;
   }
+
+  .navigation--content {
+    text-align: unset;
+  }
  }
 
  @media screen and (min-width: 1280px) {

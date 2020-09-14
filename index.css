@@ -16,13 +16,8 @@ ul {
   flex-direction: column;
   width: 100vw;
   max-width:100%;
-  /* height: 100vh; */
   color: white;
-}
-
-.header__container {
-  /* width: 80%; */
-  z-index: 10;
+  fill:white;
 }
 
 .navigation--bar {
@@ -32,6 +27,8 @@ ul {
   position: absolute;
   width: 80vw;
   flex-wrap: wrap;
+  position: absolute;
+  z-index:3;
 }
 
 .navigation--bar--logo {
@@ -41,32 +38,46 @@ ul {
   font-style: normal;
   font-weight: bold;
   cursor: context-menu;
+  z-index:50;
 }
 
 .navigation--bar--menu {
   flex-grow: 2;
-  display: flex;
+  display: none;
   justify-content: flex-start;
   flex-direction: column;
-  font-weight: bold;
   font-size: 18px;
   line-height: 22px;
-  align-items: left;
-}
-
-.navigation--bar--menu__active {
   position: fixed;
   left:0;
   top:-20px;
-  padding:50px;
+  padding:15% 10%;
   background-color: white;
   color:black;
-  width:100vw;
+  width:80vw;
   height:100vw;
   z-index:10;
 }
 
-.navigation--bar--menu__active * {
+.navigation--bar--menu__line {
+  display:unset;
+  border:2px solid black;
+  margin:2% 0;
+}
+
+/* .navigation--bar--menu__active {
+  position: fixed;
+  left:0;
+  top:-20px;
+  padding:15% 10%;
+  background-color: white;
+  color:black;
+  width:80vw;
+  height:100vw;
+  z-index:10;
+} */
+
+.navigation--bar--menu  * {
   margin-bottom: 20px;
 }
 
@@ -81,6 +92,7 @@ ul {
   justify-content: flex-end;
   cursor: pointer;
   align-items: center;
+  z-index:50;
 }
 
 .navigation--heroimage {
@@ -93,7 +105,7 @@ ul {
 .navigation--heroimage__cover {
   top:0;
   background-color: rgba(198, 108, 73, 0.4);
-  z-index:2;
+  z-index:1;
   /* height: 100%; */
   width: 100%;
   height: 100%;
@@ -129,6 +141,7 @@ nav.navbar{
   margin: 5% 10%;
   fill:var(--primary-color);
   width: 80vw;
+  z-index:2;
 }
 
 .navigation--content--items{
@@ -191,19 +204,35 @@ nav.navbar{
  
  /* minimal layar ukuran besar */
  @media screen and (min-width: 768px) {
-  /* h1 {
-    text-align: center;
-  } */
+  
+  .navigation--bar--menu {
+    display: flex;
+    justify-content: space-between;
+    flex-direction: row;
+    background-color: unset;
+    flex:4 0 50%;
+    width:unset;
+    height:unset;
+    position: unset;
+    line-height: 29px;
+    padding: unset;
+    color: white;
+}
+
+  .navigation--bar--menu__line {
+    display:none;
+  }
+
+  .navigation--bar--logo {
+    color: white;
+  }
+
   .navigation--bar--menu--burger {
     display: none;
   }
 
   .navigation--bar--menu--item {
     display: unset;
-  }
-
-  .navigation--bar--menu {
-    justify-content: space-between;
   }
 
   .navigation--content {
@@ -222,34 +251,6 @@ nav.navbar{
     font-size: 18px;
     line-height: 30px;
   }
- }
 
- @media screen and (min-width: 1280px) {
-  /* h1 {
-    text-align: center;
-  } */
-  .navigation--bar--menu--burger {
-    display: none;
-  }
-
-  .navigation--bar--menu--item {
-    display: unset;
-  }
-
-  .navigation--bar--menu {
-    justify-content: space-between;
-  }
-
-  .content * {
-    margin-bottom: 60px;
-  }
-
-  .content--title {
-    text-align: left;
-  }
-
-  .content--description {
-    font-size: 18px;
-    line-height: 30px;
-  }
+  
  }
